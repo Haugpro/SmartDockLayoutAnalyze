@@ -1,0 +1,36 @@
+{
+  "name": "SmartDockLayoutAnalyze",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/main.js",
+  "scripts": {
+    "dev:electron": "cross-env NODE_ENV=development webpack --config webpack.electron.config.js --mode development && electron . --remote-debugging-port=9229",
+    "dev:react": "cross-env NODE_ENV=development webpack-dev-server --config webpack.react.config.js --mode development"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
+    "@babel/preset-typescript": "^7.10.4",
+    "babel-loader": "^8.1.0",
+    "cross-env": "^7.0.2",
+    "css-loader": "^2.1.0",
+    "electron": "^10.1.2",
+    "html-webpack-plugin": "^4.4.1",
+    "style-loader": "^0.23.1",
+    "url-loader": "^0.6.2",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "@types/react": "^17.0.4",
+    "@types/react-dom": "^17.0.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "smart-webcomponents-react": "^9.3.33"
+  }
+}

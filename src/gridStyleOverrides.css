@@ -1,0 +1,24 @@
+smart-grid {
+    /*--smart-grid-row-height: 30px;*/
+    --smart-font-size: 12px;
+
+    /* this does not change anything */
+    /*-–smart-grid-cell-font-size: 8px;*/
+
+    /*--smart-grid-header-height: 120;*/
+    --smart-grid-default-height: 400px;
+    --smart-grid-default-width: 480px;
+    /* zoom on a grid works in chrome, however the scrollers
+    do not behave well - mouse pointer runs away from scroll-thumb*/
+    /*zoom: 60%;*/
+    /* scale is more flexible and portable but has the same impact on scroll*/
+    /*
+    transform: scaleY(0.7);
+    transform-origin: top;
+    */
+}
+
+smart-grid-column{
+    font-size: 17px;
+}
+

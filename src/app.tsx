@@ -1,21 +1,31 @@
 import React from "react";
-import ReactDom from "react-dom";
-
-import { webFrame} from 'electron';
-
+import ReactDOM from "react-dom";
+// no way without some default.css
 import 'smart-webcomponents-react/source/styles/smart.default.css';
-import TrialVeryBigGridVirtualDataSourceIsFunction from "./trialVeryBigGridVirtualDataSourceIsFunction";
+import CompTestChangeDataset from "./CompTestChangeDataset";
+import CompTestChangeDataset_virtual from "./CompTestChangeDataset_virtual";
+
+import './app.css';
 
 const mainElement = document.createElement('div');
+// document.body.setAttribute( "theme", "dark");
+document.body.appendChild(mainElement);
 
-document.body.setAttribute( "theme", "dark");
-document.body.appendChild(mainElement);const App = () => {
+var dataCount = 500;
 
-   return (
-      <div theme={"dark"}>
-         <TrialVeryBigGridVirtualDataSourceIsFunction/>
-      </div>
-   )
+
+class App extends React.Component {
+
+   render() {
+      return (
+         <div>
+            {/*<CompTestChangeDataset></CompTestChangeDataset>*/}
+            <CompTestChangeDataset_virtual></CompTestChangeDataset_virtual>
+         </div>
+      );
+   }
 }
 
-ReactDom.render(<App />, mainElement);
+ReactDOM.render(<App />, mainElement);
+
+

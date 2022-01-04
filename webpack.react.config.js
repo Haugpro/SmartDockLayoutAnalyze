@@ -26,7 +26,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.(eot|svg|ttf|woff|woff2)$/,
+        test: /\.(eot|svg|png|ttf|woff|woff2)$/,
         use: "url-loader?name=[name].[ext]"
       }
     ],
@@ -45,6 +45,6 @@ module.exports = {
     publicPath: './',
   },
   plugins: [
-    new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin( {title:'DltBeast_htmlElements from webpack.react.config.js'}),
   ],
 };

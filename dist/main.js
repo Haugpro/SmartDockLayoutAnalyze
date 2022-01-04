@@ -124,7 +124,7 @@ function createWindow() {
     mainWindow.loadURL("http://localhost:4000");
   } else {}
 
-  console.log('haug from main');
+  console.log('Hello to <DltBeast_htmlElements> from main.ts');
   mainWindow.on('closed', function () {
     mainWindow = null;
   });
@@ -139,13 +139,14 @@ ipcMain.on('synchronous-message', function (event, arg) {
   console.log(arg); // prints "ping"
 
   event.returnValue = 'pong';
-});
+}); // show file-open dialog synchronously
+// arg: object with various props like
+// { title: 'DLT file wählen', defaultPath: 'C:\\ca\\Projects\\DLTTestData', properties: ['openFile', 'multiSelections'],..}
+
 ipcMain.on('msgOpenFileDialog', function (event, arg) {
-  console.log(arg);
-  var dlgResult = dialog.showOpenDialogSync({
-    properties: ['openFile', 'multiSelections']
-  });
-  console.log(dlgResult);
+  // console.log(arg);
+  var dlgResult = dialog.showOpenDialogSync(arg); // console.log( dlgResult);
+
   event.returnValue = dlgResult;
 });
 electron__WEBPACK_IMPORTED_MODULE_0__["app"].on('ready', createWindow);

@@ -30,7 +30,7 @@ function createWindow() {
 
 
   }
-  console.log( 'haug from main');
+  console.log( 'Hello to <DltBeast_htmlElements> from main.ts');
 
   mainWindow.on('closed', () => {
     mainWindow = null;
@@ -47,10 +47,13 @@ ipcMain.on('synchronous-message', (event, arg) => {
   event.returnValue = 'pong';
 })
 
+// show file-open dialog synchronously
+// arg: object with various props like
+// { title: 'DLT file wählen', defaultPath: 'C:\\ca\\Projects\\DLTTestData', properties: ['openFile', 'multiSelections'],..}
 ipcMain.on('msgOpenFileDialog', (event, arg) => {
-  console.log(arg)
-  const dlgResult = dialog.showOpenDialogSync({ properties: ['openFile', 'multiSelections'] });
-  console.log( dlgResult);
+  // console.log(arg);
+  const dlgResult = dialog.showOpenDialogSync( arg);
+  // console.log( dlgResult);
   event.returnValue = dlgResult;
 })
 
